@@ -9,11 +9,20 @@ namespace SfmlAPI{
 	{
 	}
 
-	TextBox::TextBox(int size, sf::Color textColor, bool sel)
+	TextBox::TextBox(int charSize, sf::Color textColor, bool sel)
 	{
-		textbox.setCharacterSize(size);
+		textbox.setCharacterSize(charSize);
 		textbox.setFillColor(textColor);
 		isSelected = sel;
+		if (sel)
+		{
+			textbox.setString("_");
+		}
+		else
+		{
+			textbox.setString("");
+		}
+
 	}
 
 	void TextBox::setFont(sf::Font &font)
@@ -31,7 +40,7 @@ namespace SfmlAPI{
 		hasLimit = tof;
 	}
 
-	void TextBox::setLimit(bool tof, int lim)
+	void TextBox::setLimit(bool tof, size_t lim)
 	{
 		hasLimit = tof;
 		limit = lim;
@@ -55,6 +64,32 @@ namespace SfmlAPI{
 	std::string TextBox::getText() const
 	{
 		return text.str();
+	}
+
+	void TextBox::typedOn(sf::Event input)
+	{
+		if (isSelected)
+		{
+			int charTyped = input.text.unicode;
+			if (charTyped < 128)
+			{
+				if (hasLimit)
+				{
+					if (text.str().length() <= limit)
+					{
+						inputManager(charTyped);
+					}
+					if (text.str().length() > limit && charTyped == DELETE_KEY)
+					{
+						deleteLastChar();
+					}
+				}
+				else
+				{
+					inputManager(charTyped);
+				}
+			}
+		}
 	}
 
 	void TextBox::draw(sf::RenderWindow &window)

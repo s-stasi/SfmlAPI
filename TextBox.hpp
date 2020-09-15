@@ -10,18 +10,20 @@ namespace SfmlAPI {
 	{
 	public:
 		TextBox();
-		TextBox(int size, sf::Color textColor, bool sel);
+		TextBox(int charSize, sf::Color textColor, bool sel);
 
 		void setFont(sf::Font &font);
 
 		void setPosition(sf::Vector2f pos);
 
 		void setLimit(bool tof);
-		void setLimit(bool tof, int lim);
+		void setLimit(bool tof, size_t lim);
 
 		void setSelected(bool sel);
 
 		std::string getText() const;
+
+		void typedOn(sf::Event input);
 
 		void draw(sf::RenderWindow &window);
 
@@ -31,7 +33,7 @@ namespace SfmlAPI {
 		std::ostringstream text;
 		bool isSelected = false;
 		bool hasLimit = false;
-		int limit;
+		size_t limit;
 
 		void inputManager(int charTyped)
 		{
@@ -50,11 +52,11 @@ namespace SfmlAPI {
 		{
 			std::string t = text.str();
 			std::string newT = "";
-			for (size_t i = 0; i < t.length(); i++)
+			for (size_t i = 0; i < t.length() -1; i++)
 			{
 				newT += t[i];
 			}
-			text.str() = "";
+			text.str("");
 			text << newT;
 
 			textbox.setString(text.str());
