@@ -52,14 +52,14 @@ namespace SfmlAPI {
 		else
 		{
 			text[selectedItemIndex].setFillColor(sf::Color::White);
-			selectedItemIndex += count - 1;
+			selectedItemIndex += count - 1U;
 			text[selectedItemIndex].setFillColor(sf::Color::Red);
 		}
 	}
 
 	void Menu::moveDown()
 	{
-		if (selectedItemIndex + 1 < count)
+		if (selectedItemIndex + 1 < (int)count)
 		{
 			text[selectedItemIndex].setFillColor(sf::Color::White);
 			selectedItemIndex++;
@@ -68,7 +68,7 @@ namespace SfmlAPI {
 		else
 		{
 			text[selectedItemIndex].setFillColor(sf::Color::White);
-			selectedItemIndex -= count - 1;
+			selectedItemIndex -= count - 1U;
 			text[selectedItemIndex].setFillColor(sf::Color::Red);
 		}
 	}
