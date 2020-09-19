@@ -1,6 +1,8 @@
 #pragma once
 #include <algorithm>
-#include <windows.h>
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+	#include <windows.h>
+#endif
 #include <Lmcons.h>
 #include "Button.hpp"
 #include "Menu.hpp"

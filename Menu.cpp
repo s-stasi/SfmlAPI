@@ -15,7 +15,14 @@ namespace SfmlAPI {
 			text.push_back(sf::Text());
 			text[i].setString(elem[i]);
 			text[i].setFont(font);
-			text[i].setFillColor(sf::Color::White);
+			if (i != selectedItemIndex)
+			{
+				text[i].setFillColor(sf::Color::White);
+			}
+			else
+			{
+				text[i].setFillColor(sf::Color::Red);
+			}
 		}
 	}
 
@@ -36,7 +43,7 @@ namespace SfmlAPI {
 	{
 		for (unsigned int i = 0; i < count; i++)
 		{
-			text[i].setPosition(static_cast<float>(window.getSize().x) / 2.f - (text[1].getGlobalBounds().width / 2.f), static_cast<float>(window.getSize().y) / (i + 1.f));
+			text[i].setPosition(static_cast<float>(window.getSize().x) / 2.f - (text[i].getGlobalBounds().width / 2.f), (static_cast<float>(window.getSize().y) / (count + 1)) * (i + 1));
 			window.draw(text[i]);
 		}
 	}
