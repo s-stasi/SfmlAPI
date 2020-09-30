@@ -14,7 +14,7 @@ namespace SfmlAPI {
 		std::string uname = name;
 		for (size_t i = 0; i < uname.length(); i++)
 		{
-			if (uname[i] == '\n' && uname[i + 1] == '\n' && uname[i + 1] <= uname.length())
+			if (uname[i] == '\n' && uname[i + 1] == '\n' && uname[i + 1] <= (int)uname.length())
 			{
 				uname.erase(i, 1);
 			}
