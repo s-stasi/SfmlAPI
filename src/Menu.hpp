@@ -17,6 +17,7 @@ namespace SfmlAPI {
 		void moveUp();
 		void moveDown();
 		int getPressedItem();
+		bool isMouseOver();
 
 	private:
 		int selectedItemIndex;

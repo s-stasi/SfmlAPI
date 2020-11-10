@@ -1,4 +1,4 @@
-#include "SfmlAPI.hpp"
+#include "utils.hpp"
 
 namespace SfmlAPI {
 
@@ -6,7 +6,7 @@ namespace SfmlAPI {
 	{
 		return 1000.f / fps;
 	}
-	
+
 	float fpsAsSecs(unsigned int fps)
 	{
 		return 1.f / fps;

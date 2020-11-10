@@ -24,6 +24,7 @@ namespace SfmlAPI {
 		void draw(sf::RenderWindow &window);
 
 	private:
+
 		sf::RectangleShape	rect;
 		sf::Text			text;
 	};
