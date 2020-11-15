@@ -1,10 +1,4 @@
 ###C++###
-
-## Without extension
-*
-!/**/
-!*.*
-
 *.opendb
 
 # Prerequisites
@@ -41,7 +35,7 @@
 *.app
 
 ## VS Files
-.vs/SfmlAPI/v14
+.*
 *.sln
 *.vcxproj
 *.vcxproj.user
