@@ -41,6 +41,7 @@
 *.app
 
 ## VS Files
+.vs
 *.sln
 *.vcxproj
 *.vcxproj.user
