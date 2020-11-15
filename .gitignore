@@ -41,14 +41,16 @@
 *.app
 
 ## VS Files
-.vs
+.vs/SfmlAPI/v14
 *.sln
 *.vcxproj
 *.vcxproj.user
+*.vcxproj.filters
 *.lastbuildstate
 *.mfcribbon-ms
 *.VC.db
 *.lby~
+
 
 ## Archives
 *.zip
