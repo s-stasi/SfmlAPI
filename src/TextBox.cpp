@@ -1,4 +1,4 @@
-#include "TextBox.hpp"
+#include "../include/TextBox.hpp"
 
 
 namespace SfmlAPI{

@@ -1,4 +1,4 @@
-#include "user.hpp"
+#include "../include/user.hpp"
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #include <windows.h>
@@ -23,7 +23,10 @@ namespace SfmlAPI {
 	}
 }
 
-#elif __linux__ &| __unix__
+#elif defined LINUX_COMPILE
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 
 std::string getSystemUser()
 {

@@ -4,7 +4,8 @@
 *
 !/**/
 !*.*
-!Makefile
+
+*.opendb
 
 # Prerequisites
 *.d
@@ -40,9 +41,12 @@
 *.app
 
 ## VS Files
+*.sln
+*.vcxproj
 *.vcxproj.user
 *.lastbuildstate
 *.mfcribbon-ms
+*.VC.db
 *.lby~
 
 ## Archives
@@ -63,3 +67,28 @@ x64/
 *.res
 *.aps
 *.lby
+
+## Cmake generated files
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+src/CMakeFiles/*
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+src/cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+## Build files
+build/
+bin/
+[Bb][Uu][Ii][Ll][Dd]/
+[Bb][Ii][Nn]/
+
+src/*.sln
+src/*.vcxproj
+src/*.vcxproj.filters
