@@ -23,7 +23,7 @@ namespace SfmlAPI {
 	}
 }
 
-#elif defined LINUX_COMPILE
+#elif defined(unix) || (__unix) || (__unix__)
 #include <unistd.h>
 #include <sys/types.h>
 #include <pwd.h>
