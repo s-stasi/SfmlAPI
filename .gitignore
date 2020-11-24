@@ -89,3 +89,6 @@ bin/
 src/*.sln
 src/*.vcxproj
 src/*.vcxproj.filters
+
+!vendor/sfml/lib/**/**/*.lib
+!vendor/premake5/windows/*.exe
