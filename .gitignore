@@ -91,4 +91,5 @@ src/*.vcxproj
 src/*.vcxproj.filters
 
 !vendor/sfml/lib/**/**/*.lib
+!vendor/sfml/lib/**/**/*.a
 !vendor/premake5/windows/*.exe
