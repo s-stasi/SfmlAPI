@@ -90,11 +90,11 @@ project "SfmlAPI"
       symbols "On"
       links
       {
-         "sfml-graphics-s-d.lib",
-         "sfml-system-s-d.lib",
-         "sfml-audio-s-d.lib",
-         "sfml-network-s-d.lib",
-         "sfml-main-s-d.lib"
+         "sfml-graphics-s-d",
+         "sfml-system-s-d",
+         "sfml-audio-s-d",
+         "sfml-network-s-d",
+         "sfml-main-s-d"
       }
 
    filter {"platforms:Release", "system:Linux"} 
@@ -102,15 +102,15 @@ project "SfmlAPI"
       optimize "On"
       links
       {
-         "sfml-graphics-s.lib",
-         "sfml-system-s.lib",
-         "sfml-audio-s.lib",
-         "sfml-network-s.lib",
-         "sfml-main-s.lib"
+         "sfml-graphics-s",
+         "sfml-system-s",
+         "sfml-audio-s",
+         "sfml-network-s",
+         "sfml-main-s"
       }
 
    filter {"platforms:Debug", "platforms:x86", "system:Linux" }
-      libdirs { "vendor/sfml/lib/msvc/x86" }
+      libdirs { "vendor/sfml/lib/gcc/x86" }
 
    filter {"platforms:Release", "platforms:x86_64", "system:Linux" }
       libdirs { "vendor/sfml/lib/msvc/x64" }
