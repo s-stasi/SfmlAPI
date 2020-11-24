@@ -28,7 +28,7 @@ project "SfmlAPI"
    includedirs
    {
       "include",
-      "vendor/include"
+      "vendor/sfml/include"
    }
 
    files { "**.cpp" }
@@ -45,10 +45,11 @@ project "SfmlAPI"
 ----------------------------------------------------------------------
    filter "system:Windows"
       cppdialect "c++11"
+      characterset "MBCS"
       staticruntime "On"
       systemversion "latest"
 
-   filter { "platforms:Debug", "system:Windows" }
+   filter { "configurations:Debug", "system:Windows" }
       defines { "DEBUG" }
       symbols "On"
       links
@@ -56,11 +57,10 @@ project "SfmlAPI"
          "sfml-graphics-s-d.lib",
          "sfml-system-s-d.lib",
          "sfml-audio-s-d.lib",
-         "sfml-network-s-d.lib",
-         "sfml-main-s-d.lib"
+         "sfml-network-s-d.lib"
       }
 
-   filter {"platforms:Release", "system:Windows"} 
+   filter {"configurations:Release", "system:Windows"} 
       defines { "NDEBUG" }
       optimize "On"
       links
@@ -68,15 +68,14 @@ project "SfmlAPI"
          "sfml-graphics-s.lib",
          "sfml-system-s.lib",
          "sfml-audio-s.lib",
-         "sfml-network-s.lib",
-         "sfml-main-s.lib"
+         "sfml-network-s.lib"
       }
 
-   filter {"platforms:Debug", "platforms:x86", "system:Windows" }
-      libdirs { "vendor/sfml/lib/msvc/x86" }
+   filter { "platforms:x86", "system:Windows" }
+      libdirs { "vendor/sfml/lib/msvc/x86/" }
 
-   filter {"platforms:Release", "platforms:x86_64", "system:Windows" }
-      libdirs { "vendor/sfml/lib/msvc/x64" }
+   filter { "platforms:x86_64", "system:Windows" }
+      libdirs { "vendor/sfml/lib/msvc/x64/" }
 
 ----------------------------------------------------------------------
 ----------- Linux section --------------------------------------------
@@ -85,7 +84,7 @@ project "SfmlAPI"
       cppdialect "c++11"
       systemversion "latest"
 
-   filter { "platforms:Debug", "system:Linux" }
+   filter { "configurations:Debug", "system:Linux" }
       defines { "DEBUG" }
       symbols "On"
       links
@@ -97,7 +96,7 @@ project "SfmlAPI"
          "sfml-main-s-d"
       }
 
-   filter {"platforms:Release", "system:Linux"} 
+   filter {"configurations:Release", "system:Linux"} 
       defines { "NDEBUG" }
       optimize "On"
       links
@@ -109,8 +108,8 @@ project "SfmlAPI"
          "sfml-main-s"
       }
 
-   filter {"platforms:Debug", "platforms:x86", "system:Linux" }
+   filter {"configurations:Debug", "platforms:x86", "system:Linux" }
       libdirs { "vendor/sfml/lib/gcc/x86" }
 
-   filter {"platforms:Release", "platforms:x86_64", "system:Linux" }
-      libdirs { "vendor/sfml/lib/msvc/x64" }
+   filter {"configurations:Release", "platforms:x86_64", "system:Linux" }
+      libdirs { "vendor/sfml/lib/gcc/x64" }
